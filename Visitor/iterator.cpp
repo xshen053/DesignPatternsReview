@@ -1,41 +1,43 @@
 #include "iterator.hpp"
 
 #include <iostream>
-        
-PreorderIterator::PreorderIterator(Base* ptr) : Iterator(ptr) { 
-    this->iterators = std::stack<Iterator*>();
+
+Iterator::Iterator(Base* ptr)
+{
+    node_stack.push(base_iterator(ptr));
 }
 
-void PreorderIterator::first() {
-    while(!this->iterators.empty()) {
-        this->iterators.pop();
+Iterator::base_iterator::base_iterator(Base* ptr)
+    :ptr(ptr),index(0),number_children(ptr->number_of_children())
+{
+}
+
+void Iterator::next()
+{
+    base_iterator& it=node_stack.top();
+    int old_index=it.index++;
+    if(old_index<it.number_children)
+    {
+        Base* child = it.ptr->get_child(old_index);
+        node_stack.push(base_iterator(child));
     }
-    if(this->self_ptr) {
-        Iterator* root_itr = this->self_ptr->create_iterator();
-        root_itr->first();
-        this->iterators.push(root_itr);
+    else
+    {
+        node_stack.pop();
     }
 }
-void PreorderIterator::next() {
-    // The notes say to create an iterator for the item on the top of the stack, but the stack is
-    // an iterator so it should probably say create an item for the current of the iterator on the
-    // top of the stack
-    Iterator* top_itr = this->iterators.top()->current()->create_iterator();
-    top_itr->first();
-    this->iterators.push(top_itr);
-    while(!this->iterators.empty() && this->iterators.top()->is_done()) {
-        this->iterators.pop();
-        if(!this->iterators.empty()) {
-            this->iterators.top()->next();
-        }
-    }
+
+bool Iterator::is_done()
+{
+    return node_stack.empty();
 }
-bool PreorderIterator::is_done() {
-    return this->iterators.empty();
+
+Base* Iterator::current_node()
+{
+    return node_stack.top().ptr;
 }
-Base* PreorderIterator::current() {
-    if(!this->iterators.empty()) {
-        return this->iterators.top()->current();
-    }
-    return nullptr;
+
+int Iterator::current_index()
+{
+    return node_stack.top().index;
 }
