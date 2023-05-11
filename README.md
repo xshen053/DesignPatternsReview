@@ -2,7 +2,7 @@
 
 ## Composite pattern
 
-## Run test
+### Run test
 `cmake .`
 
 `make`
