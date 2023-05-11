@@ -263,4 +263,14 @@ CMakeFiles/test.dir/unit_test.cpp.o: \
  /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/op.hpp \
  /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/base.hpp \
  /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/Rand_test.hpp \
- /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/Rand.hpp
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/Rand.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/Mult_test.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/Mult.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/div_test.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/div.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/add_test.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/add.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/sub_test.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/sub.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/pow_test.hpp \
+ /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/./src/pow.hpp

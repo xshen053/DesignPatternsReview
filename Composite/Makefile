@@ -175,6 +175,19 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
+# Target rules for targets named lab
+
+# Build rule for target.
+lab: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab
+.PHONY : lab
+
+# fast build rule for target.
+lab/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/build
+.PHONY : lab/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -226,6 +239,30 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 unit_test.o: unit_test.cpp.o
 .PHONY : unit_test.o
 
@@ -266,7 +303,11 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... lab"
 	@echo "... test"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... unit_test.o"
 	@echo "... unit_test.i"
 	@echo "... unit_test.s"

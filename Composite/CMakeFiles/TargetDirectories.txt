@@ -1,4 +1,5 @@
 /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/CMakeFiles/test.dir
+/home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/CMakeFiles/lab.dir
 /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/CMakeFiles/edit_cache.dir
 /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/CMakeFiles/rebuild_cache.dir
 /home/xiaxishen/Desktop/UCR/DesignPatternsReview/Composite/CMakeFiles/list_install_components.dir
