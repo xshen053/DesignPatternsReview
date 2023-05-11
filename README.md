@@ -1,5 +1,7 @@
 # DesignPatternsReview
 
+## Composite pattern
+
 ## Run test
 `cmake .`
 
